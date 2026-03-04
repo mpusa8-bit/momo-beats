@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MOMO BEAT MACHINE</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+    button {
+      padding: 20px;
+      font-size: 20px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    audio {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎰 MOMO BEAT MACHINE 🎰</h1>
+  <p>Pull the lever.</p>
+
+  <button onclick="spin()">🎲 GENERATE BEAT</button>
+
+  <br>
+  <audio id="player" controls></audio>
+
+  <script>
+    const beats = [
+      "beat1.mp3",
+      "beat2.mp3",
+      "beat3.mp3"
+    ];
+
+    function spin() {
+      const random = Math.floor(Math.random() * beats.length);
+      document.getElementById("player").src = beats[random];
+    }
+  </script>
+
+</body>
+</html>
